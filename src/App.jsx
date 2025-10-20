@@ -25,18 +25,18 @@ export default function App() {
     localStorage.setItem('currentPage', currentPage);
   }, [currentPage]);
 
-  const login = (userData) => {
+  const login = (userData, token) => {
+    localStorage.setItem('token', token);
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
-    localStorage.setItem('token', token);
     setCurrentPage('home');
   };
 
   const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setUser(null);
     setCart([]);
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
     setCurrentPage('home');
     
     window.history.pushState(null, null, window.location.href);
