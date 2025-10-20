@@ -19,14 +19,15 @@ export const AuthPage = () => {
       );
 
       if (res.redirect_url) {
+
         window.location.href = res.redirect_url;
       } else {
-        login({ 
+        login({
           email: res.user.email,
           role: res.user.role,
           first_name: res.user.first_name,
           last_name: res.user.last_name
-        });
+        }, res.token);
       }
     } catch (err) {
       console.error(err.response?.data || err.message);
@@ -54,7 +55,7 @@ export const AuthPage = () => {
         email: data.user.email,
         role: data.user.role,
         first_name: data.user.first_name || data.user.email.split('@')[0]
-      });
+      }, data.token);
 
     } catch (err) {
       console.error(err.response?.data);

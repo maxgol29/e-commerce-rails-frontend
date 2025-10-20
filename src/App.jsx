@@ -28,6 +28,7 @@ export default function App() {
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
+    localStorage.setItem('token', token);
     setCurrentPage('home');
   };
 
@@ -35,6 +36,7 @@ export default function App() {
     setUser(null);
     setCart([]);
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
     setCurrentPage('home');
     
     window.history.pushState(null, null, window.location.href);
