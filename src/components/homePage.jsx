@@ -9,8 +9,9 @@ const HomePage = () => {
 
       <div className="features-grid">
         <div className="feature-card">
-          <h3 className="feature-title">Data</h3>
-          <p className="feature-text">I took dataset from hugging face, which has more than 1k rows, I polished and put it as items</p>
+          <h3 className="feature-title">Features</h3>
+          <p className="feature-text">In Admin page, there is an opportunity to order by name, description, price, role, etc.</p>
+          <p className="feature-text">Search bar is working based on name, description.</p>
         </div>
 
         <div className="feature-card">
