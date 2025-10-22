@@ -85,7 +85,7 @@ export const AuthPage = () => {
             <ShoppingBag size={48} color="rgba(2, 150, 176, 1)" />
           </div>
           <h1>
-            {isLogin ? 'Welcome Back' : 'Create Account'}
+            {isLogin ? 'Welcome Back Stage' : 'Create Account Stage'}
           </h1>
           <p className="auth-sublogin">
             {isLogin ? 'Log In' : 'Sign Up'}
